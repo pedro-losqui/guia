@@ -238,8 +238,11 @@
 
                     <div class="aside-footer d-flex flex-column align-items-center flex-column-auto py-4 py-lg-10">
 
-
-                        <a href="#" class="btn btn-icon btn-clean btn-lg mb-1 position-relative" data-toggle="tooltip"
+                        <form id="logout" action="{{ route('logout') }}" method="post">
+                            @csrf
+                        </form>
+                        
+                        <a href="javascript:;" onClick="document.getElementById('logout').submit();" class="btn btn-icon btn-clean btn-lg mb-1 position-relative" data-toggle="tooltip"
                             data-placement="right" data-container="body" data-boundary="window" title="Sair">
                             <span class="svg-icon svg-icon-xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
