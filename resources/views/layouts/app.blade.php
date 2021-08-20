@@ -56,7 +56,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('solicitação.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Solicitação">
                                 <a href="{{ route('request') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('request')) ? 'active' : '' }}"
@@ -93,7 +93,7 @@
 
                             <br>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('gerenciamento.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Gerenciamento">
                                 <a href="{{ route('manage') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('manage')) ? 'active' : '' }}"
@@ -116,7 +116,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('usuário.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Usuário">
                                 <a href="{{ route('user') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('user')) ? 'active' : '' }}"
@@ -139,7 +139,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('empresa.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Empresa">
                                 <a href="{{ route('company') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('company')) ? 'active' : '' }}"
@@ -163,7 +163,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('parceiro.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Parceiro">
                                 <a href="{{ route('partner') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('partner')) ? 'active' : '' }}"
@@ -188,7 +188,7 @@
 
                             <br>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('perfil.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Perfil">
                                 <a href="{{ route('profile') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('profile')) ? 'active' : '' }}"
@@ -210,7 +210,7 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('permissão.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Permissões">
                                 <a href="{{ route('permission') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('permission')) ? 'active' : '' }}"
