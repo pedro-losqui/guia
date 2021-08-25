@@ -56,7 +56,8 @@
                                 </a>
                             </li>
 
-                            <li style="{{ auth()->user()->can('solicitação.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('solicitação.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Solicitação">
                                 <a href="{{ route('request') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('request')) ? 'active' : '' }}"
@@ -93,7 +94,8 @@
 
                             <br>
 
-                            <li style="{{ auth()->user()->can('gerenciamento.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('gerenciamento.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Gerenciamento">
                                 <a href="{{ route('manage') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('manage')) ? 'active' : '' }}"
@@ -116,7 +118,10 @@
                                 </a>
                             </li>
 
-                            <li style="{{ auth()->user()->can('usuário.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <br>
+
+                            <li style="{{ auth()->user()->can('usuário.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Usuário">
                                 <a href="{{ route('user') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('user')) ? 'active' : '' }}"
@@ -139,7 +144,8 @@
                                 </a>
                             </li>
 
-                            <li style="{{ auth()->user()->can('empresa.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('empresa.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Empresa">
                                 <a href="{{ route('company') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('company')) ? 'active' : '' }}"
@@ -163,7 +169,8 @@
                                 </a>
                             </li>
 
-                            <li style="{{ auth()->user()->can('parceiro.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('parceiro.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Parceiro">
                                 <a href="{{ route('partner') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('partner')) ? 'active' : '' }}"
@@ -185,10 +192,32 @@
                                     </span>
                                 </a>
                             </li>
+                            
+                            <li style="{{ auth()->user()->can('exame.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                                data-boundary="window" title="Exames">
+                                <a href="{{ route('exams') }}"
+                                    class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('exams')) ? 'active' : '' }}"
+                                    role="tab">
+                                    <span class="svg-icon svg-icon-xl">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+                                            viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <polygon points="0 0 24 0 24 24 0 24" />
+                                                <path
+                                                    d="M16.5,4.5 C14.8905,4.5 13.00825,6.32463215 12,7.5 C10.99175,6.32463215 9.1095,4.5 7.5,4.5 C4.651,4.5 3,6.72217984 3,9.55040872 C3,12.6834696 6,16 12,19.5 C18,16 21,12.75 21,9.75 C21,6.92177112 19.349,4.5 16.5,4.5 Z"
+                                                    fill="#000000" fill-rule="nonzero" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </li>
 
                             <br>
 
-                            <li style="{{ auth()->user()->can('perfil.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('perfil.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Perfil">
                                 <a href="{{ route('profile') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('profile')) ? 'active' : '' }}"
@@ -210,7 +239,8 @@
                                 </a>
                             </li>
 
-                            <li style="{{ auth()->user()->can('permissão.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}" class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
+                            <li style="{{ auth()->user()->can('permissão.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                                class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Permissões">
                                 <a href="{{ route('permission') }}"
                                     class="nav-link btn btn-icon btn-clean btn-lg {{ (request()->is('permission')) ? 'active' : '' }}"
@@ -241,8 +271,9 @@
                         <form id="logout" action="{{ route('logout') }}" method="post">
                             @csrf
                         </form>
-                        
-                        <a href="javascript:;" onClick="document.getElementById('logout').submit();" class="btn btn-icon btn-clean btn-lg mb-1 position-relative" data-toggle="tooltip"
+
+                        <a href="javascript:;" onClick="document.getElementById('logout').submit();"
+                            class="btn btn-icon btn-clean btn-lg mb-1 position-relative" data-toggle="tooltip"
                             data-placement="right" data-container="body" data-boundary="window" title="Sair">
                             <span class="svg-icon svg-icon-xl">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

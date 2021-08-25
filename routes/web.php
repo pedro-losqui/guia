@@ -13,5 +13,6 @@ Route::get('/company',      'Page\CompanyController@index')->name('company');
 Route::get('/partner',      'Page\PartnerController@index')->name('partner');
 Route::get('/request',      'Page\RequestController@index')->name('request');
 Route::get('/manage',       'Page\ManageController@index')->name('manage');
+Route::get('/exams',        'Page\ExamController@index')->name('exams');
 Route::get('/profile',      'Page\ProfileController@index')->name('profile');
 Route::get('/permission',   'Page\PermissionController@index')->name('permission');

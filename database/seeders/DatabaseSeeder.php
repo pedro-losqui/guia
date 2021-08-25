@@ -57,6 +57,13 @@ class DatabaseSeeder extends Seeder
         Permission::create(['name' => 'usuário.admin']);
 
         // create permissions
+        Permission::create(['name' => 'exame.ver']);
+        Permission::create(['name' => 'exame.criar']);
+        Permission::create(['name' => 'exame.editar']);
+        Permission::create(['name' => 'exame.excluir']);
+        Permission::create(['name' => 'exame.admin']);
+
+        // create permissions
         Permission::create(['name' => 'perfil.ver']);
         Permission::create(['name' => 'perfil.criar']);
         Permission::create(['name' => 'perfil.editar']);
@@ -106,6 +113,13 @@ class DatabaseSeeder extends Seeder
         $role->givePermissionTo('usuário.editar');
         $role->givePermissionTo('usuário.excluir');
         $role->givePermissionTo('usuário.admin');
+
+        $role->givePermissionTo('exame.ver');
+        $role->givePermissionTo('exame.ver');
+        $role->givePermissionTo('exame.criar');
+        $role->givePermissionTo('exame.editar');
+        $role->givePermissionTo('exame.excluir');
+        $role->givePermissionTo('exame.admin');
 
         $role->givePermissionTo('perfil.ver');
         $role->givePermissionTo('perfil.ver');
