@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Request;
 
+use App\Models\Exam;
 use App\Models\User;
 use App\Models\Request;
 use Livewire\Component;
@@ -13,11 +14,11 @@ class Index extends Component
 {
     use WithPagination, AuthorizesRequests;
 
-    public $companies, $partners;
+    public $companies, $partners, $exams;
 
     public $busca, $amount, $user_id;
 
-    public $company_id, $partner_id, $protocol, $status, $situation, $service, $cpf, $employee_name, $gender, $born_date, $department, $post;
+    public $request_id, $exam_id, $company_id, $partner_id, $protocol, $status, $situation, $service, $cpf, $employee_name, $gender, $born_date, $department, $post;
 
     protected $rules = [
         'user_id'       => 'required', 
@@ -39,6 +40,7 @@ class Index extends Component
     {
         $this->company();
         $this->partner();
+        $this->exam();
     }
 
     public function render()
@@ -72,7 +74,11 @@ class Index extends Component
         $this->uppercase();
         $this->generate();
 
-        Request::create($this->validate());
+        $this->request_id = Request::create($this->validate());
+
+        if ($this->exam_id) {
+            $this->examSync();
+        }
 
         $this->mount();
         $this->dispatchBrowserEvent('hide', ['close' => 'create-request']);
@@ -104,9 +110,20 @@ class Index extends Component
         $this->partners = User::find(Auth::user()->id);
     }
 
+    public function exam()
+    {
+        $this->exams = Exam::all();
+    }
+
+    public function examSync()
+    {   
+        $this->request_id->exams()->sync($this->exam_id);
+    }
+
     public function default()
     {
         $this->user_id          = '';
+        $this->exam_id          = '';
         $this->company_id       = '';
         $this->partner_id       = '';
         $this->protocol         = '';

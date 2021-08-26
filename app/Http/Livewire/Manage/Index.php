@@ -50,6 +50,7 @@ class Index extends Component
             ->whereBetween('created_at', [$this->from, $this->to])
             ->where('situation', $this->rsituation)
             ->where('status', $this->rstatus)
+            ->orderBy('id', 'DESC')
             ->paginate(20)
         ]);
     }

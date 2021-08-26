@@ -20,6 +20,11 @@ class Index extends Component
         'name' => 'required|string', 
     ];
 
+    public function mount()
+    {
+        $this->default();
+    }
+
     public function render()
     {
         $this->authorize('exame.ver', Auth::user()->can('exame.ver'));

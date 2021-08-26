@@ -1,5 +1,4 @@
 <div>
-    @include('livewire.request.edit')
     @include('livewire.request.alert')
     @include('livewire.request.create')
 

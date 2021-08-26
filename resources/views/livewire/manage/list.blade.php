@@ -1,5 +1,6 @@
 @foreach($requests as $item)
     <div class="card card-custom gutter-b">
+        <div class="separator separator-dashed separator-border-2"></div>
         <div class="card-body">
             <div class="d-flex">
                 <div class="flex-shrink-0 mr-7">
@@ -117,7 +118,19 @@
                     </div>
                 </div>
             </div>
+
             <div class="separator separator-solid my-7"></div>
+                
+            @forelse($item->exams as $exams)
+                <a href="javascript:;"
+                    class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2 ml-5"><i
+                        class="fas fa-vial mr-1"></i> {{ $exams->name }}</a>
+            @empty
+                <h6>N/A</h6>
+            @endforelse
+
+            <div class="separator separator-solid my-7"></div>
+            
             <div class="d-flex align-items-center flex-wrap">
                 <div style="margin-left: 2%" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
                     <span class="mr-4">

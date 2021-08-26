@@ -5,6 +5,7 @@
 
     @foreach($requests as $item)
         <div class="card card-custom gutter-b">
+            <div class="separator separator-dashed separator-border-2"></div>
             <div class="card-body">
                 <div class="d-flex">
                     <div class="flex-shrink-0 mr-7">
@@ -53,7 +54,7 @@
                             </div>
                             <div class="my-lg-0 my-1">
                                 <a href="javascript:;"
-                                class="btn btn-sm btn-primary font-weight-bolder text-uppercase">{{ $item->protocol }}</a>
+                                    class="btn btn-sm btn-primary font-weight-bolder text-uppercase">{{ $item->protocol }}</a>
                             </div>
                         </div>
 
@@ -73,36 +74,36 @@
                                 <span class="font-weight-bold mr-4">{{ $item->situation }}</span>
                                 <div class="progress progress-xs mt-2 mb-2 flex-shrink-0 w-150px w-xl-250px">
                                     <div class="progress-bar bg-" role="progressbar" style="width: @switch($item->situation)
-                                        @case('Solicitado')
+                                                    @case('Solicitado')
+                                                        20%
+                                                            @break
+                                                    @case('Agendado')
+                                                        50%
+                                                            @break
+                                                    @case('Recebido')
+                                                        70%
+                                                            @break
+                                                    @case('Digitado')
+                                                        100%
+                                                    @break
+                                            @default
+                                                    @endswitch"
+                                                aria-valuenow=" 50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <span class="font-weight-bolder text-dark ml-4">
+                                            @switch($item->situation)
+                                                @case('Solicitado')
                                                 20%
-                                            @break
+                                                @break
                                         @case('Agendado')
                                                 50%
-                                            @break
+                                                @break
                                         @case('Recebido')
                                                 70%
-                                            @break
+                                                @break
                                         @case('Digitado')
                                                 100%
-                                            @break
-                                        @default
-                                    @endswitch"
-                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <span class="font-weight-bolder text-dark ml-4">
-                                    @switch($item->situation)
-                                        @case('Solicitado')
-                                                20%
-                                            @break
-                                        @case('Agendado')
-                                                50%
-                                            @break
-                                        @case('Recebido')
-                                                70%
-                                            @break
-                                        @case('Digitado')
-                                                100%
-                                            @break
+                                                @break
                                         @default
                                     @endswitch
                                 </span>
@@ -110,16 +111,31 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="separator separator-solid my-7"></div>
+                
+                @forelse($item->exams as $exams)
+                    <a href="javascript:;"
+                        class="text-muted text-hover-primary font-weight-bold mr-lg-8 mr-5 mb-lg-0 mb-2 ml-5"><i
+                            class="fas fa-vial mr-1"></i> {{ $exams->name }}</a>
+                @empty
+                    <h6>N/A</h6>
+                @endforelse
+
+                <div class="separator separator-solid my-7"></div>
+
                 <div class="d-flex align-items-center flex-wrap">
                     <div style="margin-left: 2%" class="d-flex align-items-center flex-lg-fill mr-5 my-1">
                         <span class="mr-4">
                             <i class="far fa-building icon-3x"></i>
                         </span>
                         <div class="d-flex flex-column text-dark-75">
-                            <span class="font-weight-bolder font-size-sm">Empresa/CNPJ: {{ $item->company->cnpj }}</span>
+                            <span class="font-weight-bolder font-size-sm">Empresa/CNPJ:
+                                {{ $item->company->cnpj }}</span>
                             <span class="font-weight-bolder font-size-h5">
-                            <span class="text-dark-50 font-weight-bold"></span>{{ $item->company->corporate_name }} </span>
+                                <span
+                                    class="text-dark-50 font-weight-bold"></span>{{ $item->company->corporate_name }}
+                            </span>
                         </div>
                         <span style="margin-left: 4%" class="mr-4">
                             <i class="fas fa-briefcase-medical icon-3x"></i>
@@ -133,5 +149,6 @@
                 </div>
                 <div class="separator separator-solid my-7"></div>
             </div>
+            <div class="separator separator-dashed separator-border-2"></div>
         </div>
     @endforeach

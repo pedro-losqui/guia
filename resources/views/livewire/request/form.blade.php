@@ -35,8 +35,9 @@
                     </div>
                 </div>
 
+                <hr>
                 <h3 class="text-dark font-weight-bold mb-10">Informações do colaborador:</h3>
-
+                
                 <div class="form-group row">
                     <label class="col-3">Atendimento</label>
                     <div class="col-9">
@@ -160,6 +161,17 @@
                     </div>
                 </div>
                 <hr>
+                <h3 class="text-dark font-weight-bold mb-10">Informações adicionais:</h3>
+                <div class="form-group row">
+                    <label class="col-3">Exames não ocupacional</label>
+                    <div class="col-9">
+                        <select wire:model='exam_id' multiple="multiple" class="form-control">
+                            @foreach($exams as $item)
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -24,6 +24,11 @@ class Request extends Model
         return $this->belongsTo(Partner::class);
     }
 
+    public function exams()
+    {
+        return $this->belongsToMany(Exam::class);
+    }
+
     protected $fillable = [
         'user_id', 'company_id', 'partner_id', 'protocol', 'status', 'situation', 'service', 'cpf', 'employee_name', 'gender', 'born_date', 'department', 'post',
     ];

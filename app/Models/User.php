@@ -22,6 +22,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Partner::class);
     }
 
+    public function exams()
+    {
+        return $this->belongsToMany(Exam::class);
+    }
+
     protected $fillable = [
         'name', 'email', 'password', 'status', 'type',
     ];
