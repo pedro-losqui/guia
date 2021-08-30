@@ -10,8 +10,7 @@
                         <select wire:model='company_id' class="form-control @error('company_id') is-invalid @enderror">
                             <option value="">Selecione</option>
                             @foreach($companies->companies as $item)
-                                <option value="{{ $item->id }}">{{ $item->corporate_name }}
-                                </option>
+                                <option value="{{ $item->id }}">{{ $item->corporate_name }} {{ $item->cnpj }}</option>
                             @endforeach
                         </select>
                         @error('company_id')

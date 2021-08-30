@@ -131,7 +131,7 @@
                         <div class="col-9">
                             <select wire:model='company_id' multiple="multiple" class="form-control">
                                 @foreach($companies as $item)
-                                    <option value="{{ $item->id }}">{{ $item->corporate_name }}</option>
+                                    <option value="{{ $item->id }}">{{ $item->corporate_name }} {{ $item->cnpj }}</option>
                                 @endforeach
                             </select>
                         </div>
