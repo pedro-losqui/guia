@@ -18,7 +18,7 @@ class Index extends Component
 
     public $busca, $amount, $block;
     
-    public $company_id, $partner_id, $companies, $partners, $profiles;
+    public $company_id, $partner_id, $companies, $partners, $profiles, $userComPar;
 
     public $user_id, $name, $email, $password, $password_confirm, $status, $type, $profile_user;
 
@@ -82,7 +82,7 @@ class Index extends Component
         $this->profile();
         $this->company();
         $this->partner();
-
+        $this->comPar();
         
         $user = User::find($id);
 
@@ -155,6 +155,11 @@ class Index extends Component
         $user->delete();
         $this->dispatchBrowserEvent('success', ['success' => 'Usuário '. $user->name . ' excluido com sucesso!']);
         $this->mount();
+    }
+
+    public function comPar()
+    {
+        $this->userComPar = User::find(Auth::user()->id); 
     }
 
     public function profile()

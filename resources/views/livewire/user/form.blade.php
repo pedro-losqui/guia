@@ -136,6 +136,21 @@
                             </select>
                         </div>
                     </div>
+                    <div class="border-bottom w-100"></div>
+                    <div class="form-group row mt-2">
+                        <label class="col-3">Empresa(s) selecionada(s) para: <strong>{{ Auth::user()->name }}</strong></label>
+                        <div class="col-9">
+                            <div class="d-flex justify-content-between text-balck pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    @forelse ($userComPar->companies as $item)
+                                        <span class="opacity-70">{{ $item->corporate_name }} {{ $item->cnpj }} &ensp;&ensp;&ensp;<a href="javascript:;"><i class="far fa-trash-alt"></i></a></span>
+                                    @empty
+                                        <span class="opacity-70">Nenhuma empresa atrelada a esse perfil.</span>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="separator separator-dashed my-10"></div>
@@ -149,6 +164,21 @@
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="border-bottom w-100"></div>
+                    <div class="form-group row mt-2">
+                        <label class="col-3">Clínica(s) selecionada(s) para: <strong>{{ Auth::user()->name }}</strong></label>
+                        <div class="col-9">
+                            <div class="d-flex justify-content-between text-balck pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    @forelse ($userComPar->partners as $item)
+                                        <span class="opacity-70">{{ $item->name }} &ensp;&ensp;&ensp;<a href="javascript:;"><i class="far fa-trash-alt"></i></a></span>
+                                    @empty
+                                        <span class="opacity-70">Nenhuma clínica atrelada a esse perfil.</span>
+                                    @endforelse
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
