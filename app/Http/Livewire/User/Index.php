@@ -82,7 +82,7 @@ class Index extends Component
         $this->profile();
         $this->company();
         $this->partner();
-        $this->comPar();
+        $this->comPar($id);
         
         $user = User::find($id);
 
@@ -157,9 +157,9 @@ class Index extends Component
         $this->mount();
     }
 
-    public function comPar()
+    public function comPar($id)
     {
-        $this->userComPar = User::find(Auth::user()->id); 
+        $this->userComPar = User::find($id); 
     }
 
     public function profile()
