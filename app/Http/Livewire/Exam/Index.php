@@ -27,7 +27,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->authorize('exame.ver', Auth::user()->can('exame.ver'));
+        $this->authorize('exames.ver', Auth::user()->can('exames.ver'));
 
         return view('livewire.exam.index', [
             'exams' => Exam::where('name', 'LIKE', "%{$this->busca}%")
@@ -38,7 +38,7 @@ class Index extends Component
 
     public function create()
     {
-        $this->authorize('exame.criar', Auth::user()->can('exame.criar'));
+        $this->authorize('exames.criar', Auth::user()->can('exames.criar'));
 
         $this->mount();
         $this->dispatchBrowserEvent('show', ['open' => 'create-exam']);
