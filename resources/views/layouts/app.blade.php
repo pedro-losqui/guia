@@ -193,7 +193,7 @@
                                 </a>
                             </li>
                             
-                            <li style="{{ auth()->user()->can('exame.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
+                            <li style="{{ auth()->user()->can('exames.ver') ? '' : 'pointer-events:none; opacity:0.4;' }}"
                                 class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body"
                                 data-boundary="window" title="Exames">
                                 <a href="{{ route('exams') }}"
