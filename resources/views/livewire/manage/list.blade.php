@@ -151,6 +151,14 @@
                         <span class="font-weight-bolder font-size-h5">
                             <span class="text-dark-50 font-weight-bold"></span>{{ $item->partner->name }}</span>
                     </div>
+                    <span style="margin-left: 4%" class="mr-4">
+                        <i class="fas fa-address-book icon-3x"></i>
+                    </span>
+                    <div class="d-flex flex-column text-dark-75">
+                        <span class="font-weight-bolder font-size-sm">Solicitado por:</span>
+                        <span class="font-weight-bolder font-size-h5">
+                            <span class="text-dark-50 font-weight-bold"></span>{{ $item->user->name }} | {{ $item->created_at->format('d/m/Y') }} </span>
+                    </div>
                 </div>
             </div>
             <div class="separator separator-solid my-7"></div>

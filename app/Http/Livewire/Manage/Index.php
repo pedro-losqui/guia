@@ -35,8 +35,8 @@ class Index extends Component
 
     public function mount()
     {
-        $this->from = date('Y-m-d');
-        $this->to = date('Y-m-d', strtotime("+15 days"));
+        $this->from = date('Y-m-d', strtotime("-9 days"));
+        $this->to = date('Y-m-d', strtotime("+1 days"));
         $this->rstatus = 'Valida';
         $this->rsituation = 'Solicitado';
     }

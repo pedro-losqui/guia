@@ -14,6 +14,8 @@ class Index extends Component
 {
     use WithPagination, AuthorizesRequests;
 
+    public $to, $from;
+
     public $companies, $partners, $exams;
 
     public $busca, $amount, $user_id;
@@ -38,6 +40,8 @@ class Index extends Component
 
     public function mount()
     {
+        $this->from = date('Y-m-d', strtotime("-9 days"));
+        $this->to = date('Y-m-d', strtotime("+1 days"));
         $this->company();
         $this->partner();
         $this->exam();
@@ -49,7 +53,7 @@ class Index extends Component
 
         return view('livewire.request.index', [
             'requests' => Request::where('employee_name', 'LIKE', "%{$this->busca}%")
-            ->whereDate('created_at', '=', date('Y-m-d'))
+            ->whereBetween('created_at', [$this->from, $this->to])
             ->where('user_id', '=', Auth::user()->id)
             ->orderBy('id', 'DESC')
             ->paginate(20)

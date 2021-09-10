@@ -49,6 +49,14 @@
             <div class="card-title">
                 <h3 class="card-label">Listagem de solicitações</h3>
             </div>
+            <div class="card-title">
+                <div class="form-group mb-2 mt-3">
+                    <div class="input-group">
+                        <input type="date" wire:model='from' class="form-control">
+                        <input type="date" wire:model='to' class="form-control">
+                    </div>
+                </div>
+            </div>
             <div class="card-toolbar">
                 Total de registros&nbsp;&nbsp;&nbsp;
                 <a href="#" class="btn btn-sm btn-success font-weight-bold">{{ count($requests) }}</a>
